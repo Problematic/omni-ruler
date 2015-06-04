@@ -5,13 +5,6 @@ Add multiple rulers/wrap guides
 ![](http://i.imgur.com/pu9yhoK.png)
 
 ## Configuration
-Defaults to one ruler at `editor.preferredLineLength`, or add something like this to your `config.cson` file:
+Defaults to one ruler at `editor.preferredLineLength`, or add comma-separated values on the settings page:
 
-```coffeescript
-'omni-ruler':
-  'columns': [
-    73
-    80
-    100
-  ]
-```
+![](http://i.imgur.com/gEI6jKP.png)
