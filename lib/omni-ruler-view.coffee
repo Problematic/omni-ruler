@@ -73,7 +73,7 @@ class OmniRulerView extends HTMLDivElement
       while @firstChild
         @removeChild @firstChild
       for column in columns
-        columnWidth = @editorElement.getDefaultCharacterWidth() * column
+        columnWidth = @editorElement.getDefaultCharacterWidth() * parseInt(column, 10)
         ruler = @createElement 'div', 'omni-ruler'
         ruler.style.left = "#{columnWidth}px"
         ruler.style.display = 'block'

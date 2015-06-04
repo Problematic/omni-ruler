@@ -9,7 +9,7 @@ module.exports =
       default: []
       type: 'array'
       items:
-        type: 'integer'
+        type: 'string'
 
   activate: ->
     atom.workspace.observeTextEditors (editor) ->
