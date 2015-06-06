@@ -44,11 +44,6 @@ class OmniRulerView extends HTMLDivElement
       scope: @editor.getRootScopeDescriptor(),
       updateRulersCallback
     )
-    subscriptions.add atom.config.onDidChange(
-      'wrap-guide.enabled',
-      scope: @editor.getRootScopeDescriptor(),
-      updateRulersCallback
-    )
     subscriptions
 
   getDefaultColumns: ->
@@ -58,9 +53,6 @@ class OmniRulerView extends HTMLDivElement
     customColumns = atom.config.get('omni-ruler.columns')
     return if Array.isArray(customColumns) then customColumns else @getDefaultColumns()
 
-  isEnabled: ->
-    atom.config.get('wrap-guide.enabled', scope: @editor.getRootScopeDescriptor()) ? true
-
   createElement: (type, classes...) ->
     element = document.createElement(type)
     element.classList.add classes...
@@ -69,7 +61,7 @@ class OmniRulerView extends HTMLDivElement
   updateRulers: ->
     columns = @getRulersColumns(@editor.getPath(), @editor.getGrammar().scopeName)
 
-    if columns.length > 0 and @isEnabled()
+    if columns.length > 0
       while @firstChild
         @removeChild @firstChild
       for column in columns
