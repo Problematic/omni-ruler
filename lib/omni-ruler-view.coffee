@@ -17,7 +17,7 @@ class OmniRulerView extends HTMLDivElement
 
     subscriptions = new CompositeDisposable
     configSubscriptions = @handleConfigEvents()
-    subscriptions.add atom.config.onDidChange('omni-ruler.columns', updateRulersCallback)
+    subscriptions.add atom.config.onDidChange('omni-ruler', updateRulersCallback)
     subscriptions.add atom.config.onDidChange 'editor.fontSize', =>
       # setTimeout because we need to wait for the editor measurement to happen
       setTimeout(updateRulersCallback, 0)
@@ -77,6 +77,8 @@ class OmniRulerView extends HTMLDivElement
         ruler = @createElement 'div', 'omni-ruler'
         ruler.style.left = "#{columnWidth}px"
         ruler.style.display = 'block'
+        if atom.config.get('omni-ruler.useCustomRulerColor')
+          ruler.style['background-color'] = atom.config.get('omni-ruler.customRulerColor').toRGBAString()
         @appendChild ruler
       @style.display = 'block'
     else
