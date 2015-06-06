@@ -2,9 +2,6 @@ OmniRulerView = require './omni-ruler-view'
 
 module.exports =
   config:
-    enabled:
-      type: 'boolean'
-      default: true
     columns:
       default: []
       type: 'array'
