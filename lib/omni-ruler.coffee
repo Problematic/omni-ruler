@@ -7,6 +7,12 @@ module.exports =
       type: 'array'
       items:
         type: 'string'
+    useCustomRulerColor:
+      type: 'boolean'
+      default: false
+    customRulerColor:
+      type: 'color'
+      default: 'white'
 
   activate: ->
     atom.workspace.observeTextEditors (editor) ->
