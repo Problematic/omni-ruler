@@ -9,7 +9,7 @@ class OmniRulerView extends HTMLDivElement
     this
 
   attachToLines: ->
-    lines = @editorElement.rootElement?.querySelector?('.lines')
+    lines = @editorElement?.querySelector?('.lines')
     lines?.appendChild(this)
 
   handleEvents: ->
