@@ -1,7 +1,7 @@
 {
   "name": "omni-ruler",
   "main": "./lib/omni-ruler",
-  "version": "0.5.0",
+  "version": "0.6.0",
   "description": "Add multiple rulers/wrap guides",
   "repository": "https://github.com/Problematic/omni-ruler",
   "license": "MIT",
